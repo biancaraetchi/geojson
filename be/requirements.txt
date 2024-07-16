@@ -5,3 +5,4 @@ virtualenv
 djangorestframework-simplejwt
 psycopg2
 django-environ
+django-cors-headers
