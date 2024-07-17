@@ -9,6 +9,8 @@ createvenv:
 .venv/Scripts/activate: requirements.txt
 	$(MAKE) createvenv
 	./.venv/Scripts/pip3 install -r requirements.txt
+saveversions:
+    pip freeze > requirements.txt
 deactivatevenv:
 	deactivate
 clean:

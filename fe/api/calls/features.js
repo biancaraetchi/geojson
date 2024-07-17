@@ -4,10 +4,10 @@ let config = {
     headers: {
     },
     params: {
-      "x_high_bound":10,
-      "x_low_bound":2,
-      "y_high_bound":55,
-      "y_low_bound":35
+      "x_high_bound":180,
+      "x_low_bound":0,
+      "y_high_bound":180,
+      "y_low_bound":0
     }
   }
 

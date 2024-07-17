@@ -19,8 +19,8 @@ class MunicipalitiesList(ListCreateAPIView):
         y_low_bound = float(self.request.query_params.get("y_low_bound"))
         for i in municipalities:
             coordinates = extract_floats(i.geom_text)
-            if not any(x_high_bound > float(coordinates[j]) > x_low_bound and y_high_bound > float(
-                    coordinates[j + 1]) > y_low_bound
+            if not any(x_high_bound >= float(coordinates[j]) >= x_low_bound and y_high_bound >= float(
+                    coordinates[j + 1]) >= y_low_bound
                        for j in range(len(coordinates))):
                 print("Removing " + i.name)
                 municipalities = municipalities.exclude(ogc_fid=i.ogc_fid)
