@@ -7,9 +7,11 @@ Make sure to have **python** installed.
 1. Move into `be` folder: `cd be`
 2. Install requirements:
     - Globally, immediately with: `pip3 install -r requirements.txt`
-    - Or using a virtual machine: 
-      1. create machine: `virtualenv .venv`
-      2. activate machine: `.venv/Scripts/activate`
+    - Or using a virtual machine:
+      1. install `virtualenv`: `python -m pip install virtualenv`
+      2. create virtual machine: `virtualenv .venv`
+      3. activate machine: `.venv/Scripts/activate`
+      4. install packages: `pip3 install -r requirements.txt`
 3. Run server locally on `localhost:8000`: `python manage.py runserver`
 
 ## Frontend:
