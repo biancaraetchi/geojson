@@ -7,3 +7,10 @@ export const fetchTokens = async () => {
       password:process.env.password
     })
   };
+
+  export const fetchRefresh = async (refresh) => {
+    return axiosInstance
+    .post("api/token/refresh/",{
+      refresh
+    })
+  };

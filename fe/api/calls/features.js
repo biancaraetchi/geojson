@@ -22,3 +22,11 @@ export const fetchFeatures = async (features, page, options) => {
       return features
     }
   };
+
+export const editFeatureProps = async (feature, name, options) => {
+  return axiosInstance.put(`municipalities/${feature.ogc_fid}/`, {
+    name,
+    geom_text:feature.geom_text,
+    ogc_fid:feature.ogc_fid
+  }, {...options})
+};
