@@ -8,6 +8,7 @@ import { useFeatures } from '@/store/useFeatures';
 import WKT from 'ol/format/WKT.js';
 import {Vector as VectorSource} from 'ol/source.js';
 import {Vector as VectorLayer} from 'ol/layer.js';
+import { fromLonLat } from 'ol/proj';
 
 function MapComponent() {
     const features = useFeatures((state) => state.features)
@@ -43,8 +44,9 @@ function MapComponent() {
             layers: [raster, vector],
             target: 'map',
             view: new View({
-              center: [0, 0],
-              zoom: 0,
+              center: fromLonLat([5.3, 52.2]),
+              zoom: 7,
+              projection: 'EPSG:3857'
             }),
           });
     
