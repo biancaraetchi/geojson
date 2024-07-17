@@ -31,12 +31,12 @@ export default function Page() {
             }
         }
     }, [])
-    
+
     return (
         <>
         <button onClick={() => navigate("/")}>Go to Map View</button>
         <h1>List of NL municipalities</h1>
-        <h3>Click to edit properties</h3>
+        <h5>Click to edit properties</h5>
       {features?.map((feature, index) =>{ 
         return <ListItem key={index} feature={feature}/>
       }

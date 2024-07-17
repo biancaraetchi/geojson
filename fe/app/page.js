@@ -7,6 +7,7 @@ import { useFeatures } from "@/store/useFeatures";
 import { fetchFeatures } from "@/api/calls/features";
 import { redirect } from "next/dist/server/api-utils";
 import { navigate } from "./actions";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Home() {
   const accessToken = useAuth((state) => state.accessToken)

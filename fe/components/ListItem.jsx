@@ -3,6 +3,7 @@ import { useAuth } from "@/store/useAuth";
 import { isTokenExpired } from "@/utils/jwtCheck";
 import { useState } from "react";
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function ListItem({feature}){
     const [isEditing, setIsEditing] = useState(false)
@@ -22,13 +23,13 @@ function ListItem({feature}){
 
     return (
         <>
-        <p style={{cursor:"pointer"}} onClick={() => setIsEditing(!isEditing)} key={feature.ogc_fid}>{name}</p>
+        <p className="h2 text-primary" role="button" onClick={() => setIsEditing(!isEditing)} key={feature.ogc_fid}>{name}</p>
         <form onSubmit={(e) => e.preventDefault()} style={{display:isEditing ? "block":"none"}}>
-            <label htmlFor="name">Name of location</label>
-            <input type="text" id="name" name="name" value={newName} onChange={(e) =>setNewName(e.target.value)}/>
-            <label htmlFor="geom_text">Geometry text</label>
-            <input disabled id="geom_text" name="geom_text" type="text" value={feature.geom_text} />
-            <input type="submit" onClick={editFeature}/>
+            <label className="mt-2" htmlFor="name">Name of location</label>
+            <input className="d-block" type="text" id="name" name="name" value={newName} onChange={(e) =>setNewName(e.target.value)}/>
+            <label className="mt-2" htmlFor="geom_text">Geometry text</label>
+            <input className="d-block" disabled id="geom_text" name="geom_text" type="text" value={feature.geom_text} />
+            <input className="mt-2" type="submit" onClick={editFeature}/>
         </form>
         </>
     )
